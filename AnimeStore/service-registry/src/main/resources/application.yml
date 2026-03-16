@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: service-registry
+  cloud:
+    config:
+      enabled: false
+
+server:
+  port: 8761
+
+autoconfigure:
+  exclude:
+    - org.springframework.cloud.config.server.config.EncryptionAutoConfiguration
+    - org.springframework.cloud.config.server.config.ConfigServerAutoConfiguration
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
