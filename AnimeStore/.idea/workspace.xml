@@ -5,9 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c89560a6-b1ae-4d97-94fd-f3dea036ba6d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/sanets/dev/apigateway/filter/AuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/sanets/dev/apigateway/filter/RouteValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/sanets/dev/apigateway/util/JwtUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-repo/api-gateway.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-repo/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-repo/user-service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/sanets/dev/userservice/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/sanets/dev/userservice/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/sanets/dev/userservice/dto/AuthRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/sanets/dev/userservice/dto/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/sanets/dev/userservice/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/sanets/dev/userservice/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/sanets/dev/userservice/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/sanets/dev/userservice/util/JwtUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,10 +41,28 @@
     <projectState path="$PROJECT_DIR$/api-gateway">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/catalog-service">
+      <ProjectState />
+    </projectState>
     <projectState path="$PROJECT_DIR$/config-server">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/inventory-service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/notification-service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/order-service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/payment-service">
+      <ProjectState />
+    </projectState>
     <projectState path="$PROJECT_DIR$/service-registry">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/user-service">
       <ProjectState />
     </projectState>
   </component>
@@ -50,6 +87,12 @@
                 <item name="AnimeStore" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AnimeStore" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -60,6 +103,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -90,6 +134,8 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+    <option name="sortKey" value="BY_TYPE" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
@@ -101,6 +147,7 @@
     "Gradle.Build AnimeStore.executor": "Run",
     "Gradle.Build config-server.executor": "Run",
     "Gradle.Build service-registry.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
     "Gradle.ServiceRegistryApplicationTests.contextLoads.executor": "Run",
     "Gradle.ServiceRegistryApplicationTests.executor": "Run",
     "Gradle.config-server [dependencies].executor": "Run",
@@ -116,7 +163,9 @@
     "Spring Boot.ConfigServerApplication.executor": "Run",
     "Spring Boot.ServiceRegistryApplication (1).executor": "Run",
     "Spring Boot.ServiceRegistryApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "Spring Boot.UserServiceApplication.executor": "Run",
+    "git-widget-placeholder": "dev/cloud-services",
+    "last_opened_file_path": "D:/Projects/AnimeStore/AnimeStore/user-service/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -130,6 +179,15 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\AnimeStore\AnimeStore\user-service\src\main\resources" />
+      <recent name="D:\Projects\AnimeStore\AnimeStore\user-service\build\resources\main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\AnimeStore\AnimeStore\user-service\build\resources\main" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -144,14 +202,19 @@
         <entry key="SpringBootApplicationConfigurationType">
           <value>
             <set>
+              <option value="CatalogServiceApplication" />
               <option value="ConfigServerApplication (1)" />
+              <option value="InventoryServiceApplication" />
+              <option value="NotificationServiceApplication" />
+              <option value="OrderServiceApplication" />
+              <option value="PaymentServiceApplication" />
             </set>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ServiceRegistryApplicationTests.contextLoads">
+  <component name="RunManager" selected="Spring Boot.UserServiceApplication">
     <configuration name="AnimeStore [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -273,6 +336,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CatalogServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="AnimeStore.catalog-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="sanets.dev.catalogservice.CatalogServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConfigServerApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="AnimeStore.config-server.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="sanets.dev.configserver.ConfigServerApplication" />
@@ -287,6 +357,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="InventoryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="AnimeStore.inventory-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="sanets.dev.inventoryservice.InventoryServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotificationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="AnimeStore.notification-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="sanets.dev.notificationservice.NotificationServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="AnimeStore.order-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="sanets.dev.orderservice.OrderServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="AnimeStore.payment-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="sanets.dev.paymentservice.PaymentServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServiceRegistryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="AnimeStore.service-registry.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="sanets.dev.serviceregistry.ServiceRegistryApplication" />
@@ -294,11 +392,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="AnimeStore.user-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="sanets.dev.userservice.UserServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AnimeStore [build]" />
         <item itemvalue="Gradle.ServiceRegistryApplicationTests.contextLoads" />
         <item itemvalue="Gradle.ServiceRegistryApplicationTests" />
-        <item itemvalue="Gradle.AnimeStore [build]" />
         <item itemvalue="Gradle.config-server [dependencies]" />
         <item itemvalue="Gradle.service-registry [dependencies]" />
       </list>
@@ -346,6 +451,12 @@
       <workItem from="1773670479623" duration="1029000" />
       <workItem from="1773671528589" duration="36000" />
       <workItem from="1773671574131" duration="1085000" />
+      <workItem from="1773674888286" duration="2213000" />
+      <workItem from="1773680494915" duration="14000" />
+      <workItem from="1773739397912" duration="859000" />
+      <workItem from="1773740277238" duration="72000" />
+      <workItem from="1773740363571" duration="3184000" />
+      <workItem from="1773831606949" duration="8896000" />
     </task>
     <servers />
   </component>

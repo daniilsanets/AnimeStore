@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/api/v1/users/**
+          filters:
+            - AuthenticationFilter
+
+        - id: catalog-service
+          uri: lb://CATALOG-SERVICE
+          predicates:
+              - Path=/api/v1/catalog/**
+          filters:
+              - AuthenticationFilter
