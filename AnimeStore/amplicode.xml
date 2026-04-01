@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AmplicodePersistenceUnitSettings">
+    <persistence-units>
+      <persistence-unit moduleName="AnimeStore.catalog-service.main" name="Default">
+        <packages>
+          <package value="sanets.dev.catalogservice" />
+        </packages>
+      </persistence-unit>
+      <persistence-unit moduleName="AnimeStore.order-service.main" name="Default">
+        <packages>
+          <package value="sanets.dev.orderservice" />
+        </packages>
+      </persistence-unit>
+      <persistence-unit moduleName="AnimeStore.user-service.main" name="Default">
+        <packages>
+          <package value="sanets.dev.userservice" />
+        </packages>
+      </persistence-unit>
+    </persistence-units>
+  </component>
+</project>

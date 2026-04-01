@@ -5,18 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c89560a6-b1ae-4d97-94fd-f3dea036ba6d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/dto/ProductFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/entity/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/entity/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/entity/ProductType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/repository/CatalogRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/repository/specification/ProductSpecifications.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/service/CatalogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-repo/catalog-service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/amplicode-jpa.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/amplicode-settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-repo/order-service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/sanets/dev/orderservice/dto/CreateOrderRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/sanets/dev/orderservice/dto/CreateOrderResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/sanets/dev/orderservice/entity/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/sanets/dev/orderservice/entity/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/sanets/dev/orderservice/entity/OrderStatusHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/sanets/dev/orderservice/entity/Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/sanets/dev/orderservice/repository/OrderItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/sanets/dev/orderservice/repository/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/sanets/dev/orderservice/repository/OrderStatusHistoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/sanets/dev/orderservice/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-registry/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/dto/ProductFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/dto/ProductFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/entity/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/repository/CatalogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/repository/CatalogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/repository/specification/ProductSpecifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/repository/specification/ProductSpecifications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/service/CatalogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/java/sanets/dev/catalogservice/service/CatalogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/api-gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/api-gateway.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/sanets/dev/orderservice/OrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/sanets/dev/orderservice/OrderServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,9 +81,28 @@
         <task path="$PROJECT_DIR$/api-gateway">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/order-service">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="order-service" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="order-service" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="order-service" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -80,6 +115,7 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -98,6 +134,25 @@
     &quot;accountId&quot;: &quot;49ee1514-6b7b-4b21-a7c8-03c6dfa95fe5&quot;
   }
 }</component>
+  <component name="GradleModuleStateConfig" initialized="true">
+    <option name="configPaths">
+      <map>
+        <entry key="$PROJECT_DIR$" value="D:\Projects\AnimeStore\AnimeStore\build.gradle" />
+        <entry key="$PROJECT_DIR$/api-gateway" value="D:\Projects\AnimeStore\AnimeStore\api-gateway\build.gradle" />
+        <entry key="$PROJECT_DIR$/catalog-service" value="D:\Projects\AnimeStore\AnimeStore\catalog-service\build.gradle" />
+        <entry key="$PROJECT_DIR$/config-server" value="D:\Projects\AnimeStore\AnimeStore\config-server\build.gradle" />
+        <entry key="$PROJECT_DIR$/inventory-service" value="D:\Projects\AnimeStore\AnimeStore\inventory-service\build.gradle" />
+        <entry key="$PROJECT_DIR$/notification-service" value="D:\Projects\AnimeStore\AnimeStore\notification-service\build.gradle" />
+        <entry key="$PROJECT_DIR$/order-service" value="D:\Projects\AnimeStore\AnimeStore\order-service\build.gradle" />
+        <entry key="$PROJECT_DIR$/payment-service" value="D:\Projects\AnimeStore\AnimeStore\payment-service\build.gradle" />
+        <entry key="$PROJECT_DIR$/service-registry" value="D:\Projects\AnimeStore\AnimeStore\service-registry\build.gradle" />
+        <entry key="$PROJECT_DIR$/user-service" value="D:\Projects\AnimeStore\AnimeStore\user-service\build.gradle" />
+      </map>
+    </option>
+  </component>
+  <component name="HttpClientEndpointsTabState">
+    <option name="cachedRequestData" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;b8427f7a1a3a6b81534772d3b2a9a34df1e06c9f&quot; value=&quot;###&amp;#10;GET http://localhost/api/v1/catalog/products/{{id}}&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+  </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -112,49 +167,55 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.AnimeStore [:Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.AnimeStore [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.AnimeStore [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.AnimeStore [hello].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.AnimeStore [wrapper].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build AnimeStore.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build config-server.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build service-registry.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ServiceRegistryApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ServiceRegistryApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.config-server [dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.service-registry [dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.CatalogServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceRegistryApplication (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceRegistryApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;future/catalog-service&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/AnimeStore/AnimeStore/user-service/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;spring&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.docker-compose.yml.catalog_db: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.pgadmin: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "Gradle.AnimeStore [:Main.main()].executor": "Run",
+    "Gradle.AnimeStore [build].executor": "Run",
+    "Gradle.AnimeStore [clean].executor": "Run",
+    "Gradle.AnimeStore [hello].executor": "Run",
+    "Gradle.AnimeStore [wrapper].executor": "Run",
+    "Gradle.AnimeStore:order-service [build].executor": "Run",
+    "Gradle.Build AnimeStore.executor": "Run",
+    "Gradle.Build config-server.executor": "Run",
+    "Gradle.Build service-registry.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.ServiceRegistryApplicationTests.contextLoads.executor": "Run",
+    "Gradle.ServiceRegistryApplicationTests.executor": "Run",
+    "Gradle.config-server [dependencies].executor": "Run",
+    "Gradle.service-registry [dependencies].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.CatalogServiceApplication.executor": "Run",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.OrderServiceApplication.executor": "Run",
+    "Spring Boot.ServiceRegistryApplication (1).executor": "Run",
+    "Spring Boot.ServiceRegistryApplication.executor": "Run",
+    "Spring Boot.UserServiceApplication.executor": "Run",
+    "git-widget-placeholder": "feat/add-order-service",
+    "last_opened_file_path": "D:/Projects/AnimeStore/AnimeStore/user-service/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="sanets.dev.catalogservice.dto" />
@@ -165,6 +226,7 @@
       <recent name="D:\Projects\AnimeStore\AnimeStore\user-service\build\resources\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\AnimeStore\AnimeStore" />
       <recent name="D:\Projects\AnimeStore\AnimeStore\user-service\build\resources\main" />
     </key>
   </component>
@@ -185,7 +247,6 @@
               <option value="ConfigServerApplication (1)" />
               <option value="InventoryServiceApplication" />
               <option value="NotificationServiceApplication" />
-              <option value="OrderServiceApplication" />
               <option value="PaymentServiceApplication" />
             </set>
           </value>
@@ -193,7 +254,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserServiceApplication">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="AnimeStore [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -216,58 +277,10 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ServiceRegistryApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AnimeStore:order-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;sanets.dev.serviceregistry.ServiceRegistryApplicationTests&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ServiceRegistryApplicationTests.contextLoads" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;sanets.dev.serviceregistry.ServiceRegistryApplicationTests.contextLoads&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="config-server [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/config-server" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/order-service" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -275,29 +288,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="dependencies" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="service-registry [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/service-registry" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="dependencies" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -378,13 +369,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.catalog_db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="catalog_db" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.pgadmin: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="pgadmin" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.pgadmin: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.catalog_db: Compose Deployment" />
+        <item itemvalue="Gradle.AnimeStore:order-service [build]" />
         <item itemvalue="Gradle.AnimeStore [build]" />
-        <item itemvalue="Gradle.ServiceRegistryApplicationTests.contextLoads" />
-        <item itemvalue="Gradle.ServiceRegistryApplicationTests" />
-        <item itemvalue="Gradle.config-server [dependencies]" />
-        <item itemvalue="Gradle.service-registry [dependencies]" />
       </list>
     </recent_temporary>
   </component>
@@ -441,11 +470,26 @@
       <workItem from="1774258964034" duration="10000" />
       <workItem from="1774276299281" duration="5997000" />
       <workItem from="1774353208414" duration="1379000" />
+      <workItem from="1774357038685" duration="10373000" />
+      <workItem from="1774436167162" duration="9642000" />
+      <workItem from="1774454570863" duration="14000" />
+      <workItem from="1774957173177" duration="6182000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
