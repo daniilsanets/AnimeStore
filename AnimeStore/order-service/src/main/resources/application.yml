@@ -28,4 +28,3 @@ resilience4j:
       createOrder:
         baseConfig: default
         waitDurationInOpenState: 20s
-      get

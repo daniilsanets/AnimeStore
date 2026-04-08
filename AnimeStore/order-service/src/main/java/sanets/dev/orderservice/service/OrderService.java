@@ -2,6 +2,7 @@ package sanets.dev.orderservice.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
@@ -18,6 +19,8 @@ import sanets.dev.orderservice.entity.Order;
 import sanets.dev.orderservice.entity.OrderItem;
 import sanets.dev.orderservice.entity.OrderStatusHistory;
 import sanets.dev.orderservice.entity.Status;
+import sanets.dev.orderservice.kafka.event.OrderCreatedEvent;
+import sanets.dev.orderservice.kafka.producer.OrderProducer;
 import sanets.dev.orderservice.repository.OrderItemRepository;
 import sanets.dev.orderservice.repository.OrderRepository;
 import sanets.dev.orderservice.repository.OrderStatusHistoryRepository;
@@ -37,10 +40,9 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final OrderItemRepository orderItemRepository;
     private final OrderStateMachine orderStateMachine;
+    private final OrderProducer orderProducer;
     private final CatalogClient catalogClient;
 
-    // Simple in-memory cache for products fetched from catalog-service.
-    // If catalog-service is unavailable, we try to build the order from cached values.
     private final ConcurrentHashMap<Long, CatalogProductDto> catalogCache = new ConcurrentHashMap<>();
 
     @Transactional
@@ -62,6 +64,7 @@ public class OrderService {
                 .idempotencyKey(idempotencyKey)
                 .totalAmount(totalAmount)
                 .build();
+
         var persistedOrder = orderRepository.save(order);
 
         var orderItems = resolvedItems.stream()
@@ -70,6 +73,8 @@ public class OrderService {
         orderItemRepository.saveAll(orderItems);
 
         saveStatusHistory(persistedOrder.getId(), Status.NEW, Status.NEW, "Order created");
+
+        orderProducer.sendOrderCreateEvent(persistedOrder);
 
         return new CreateOrderResult(toCreateOrderResponse(persistedOrder), false);
     }
@@ -189,8 +194,6 @@ public class OrderService {
         CatalogProductDto product;
         try {
             product = catalogClient.getProductById(requestItem.getProductId());
-            // Cache only when we successfully fetched product data.
-            // Validation below ensures cache won't contain broken values.
         } catch (Exception exception) {
             product = catalogCache.get(requestItem.getProductId());
             if (product == null) {
@@ -215,7 +218,6 @@ public class OrderService {
             );
         }
 
-        // Cache validated product values for future requests.
         catalogCache.put(requestItem.getProductId(), product);
 
         return new ResolvedOrderItem(
