@@ -20,8 +20,8 @@ spring:
               - AuthenticationFilter
 
         - id: order-service
-          uri: lb://CATALOG-SERVICE
+          uri: lb://ORDER-SERVICE
           predicates:
-              - Path=/api/v1/order/**
+              - Path=/api/v1/orders/**
           filters:
               - AuthenticationFilter

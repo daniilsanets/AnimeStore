@@ -1,6 +1,5 @@
-package sanets.dev.orderservice.kafka.event;
+package sanets.dev.inventoryservice.kafka.event.orderservice;
 
-import sanets.dev.orderservice.dto.OrderItemDto;
 import java.math.BigDecimal;
 import java.util.List;
 

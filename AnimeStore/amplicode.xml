@@ -17,6 +17,16 @@
           <package value="sanets.dev.userservice" />
         </packages>
       </persistence-unit>
+      <persistence-unit moduleName="AnimeStore.inventory-service.main" name="Default">
+        <packages>
+          <package value="sanets.dev.inventoryservice" />
+        </packages>
+      </persistence-unit>
+      <persistence-unit moduleName="AnimeStore.payment-service.main" name="Default">
+        <packages>
+          <package value="sanets.dev.paymentservice" />
+        </packages>
+      </persistence-unit>
     </persistence-units>
   </component>
 </project>

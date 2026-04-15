@@ -1,8 +1,8 @@
 package sanets.dev.orderservice.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
@@ -12,6 +12,7 @@ import sanets.dev.orderservice.client.dto.CatalogProductDto;
 import sanets.dev.orderservice.dto.CreateOrderItemRequestDTO;
 import sanets.dev.orderservice.dto.CreateOrderRequestDTO;
 import sanets.dev.orderservice.dto.CreateOrderResponseDTO;
+import sanets.dev.orderservice.dto.OrderItemDto;
 import sanets.dev.orderservice.dto.OrderItemResponseDTO;
 import sanets.dev.orderservice.dto.OrderResponseDTO;
 import sanets.dev.orderservice.dto.OrderStatusUpdateRequestDTO;
@@ -20,6 +21,7 @@ import sanets.dev.orderservice.entity.OrderItem;
 import sanets.dev.orderservice.entity.OrderStatusHistory;
 import sanets.dev.orderservice.entity.Status;
 import sanets.dev.orderservice.kafka.event.OrderCreatedEvent;
+import sanets.dev.orderservice.kafka.event.paymentservice.PaymentProcessedEvent;
 import sanets.dev.orderservice.kafka.producer.OrderProducer;
 import sanets.dev.orderservice.repository.OrderItemRepository;
 import sanets.dev.orderservice.repository.OrderRepository;
@@ -32,6 +34,7 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class OrderService {
@@ -58,7 +61,7 @@ public class OrderService {
         var totalAmount = totalAmount(resolvedItems);
 
         var order = Order.builder()
-                .status(Status.NEW)
+                .status(Status.PAYMENT_PENDING)
                 .userId(request.getUserId())
                 .currency("USD")
                 .idempotencyKey(idempotencyKey)
@@ -74,9 +77,24 @@ public class OrderService {
 
         saveStatusHistory(persistedOrder.getId(), Status.NEW, Status.NEW, "Order created");
 
-        orderProducer.sendOrderCreateEvent(persistedOrder);
+        List<OrderItemDto> dtoList = orderItems.stream()
+                .map(item -> new OrderItemDto(item.getProductId(), item.getQuantity()))
+                .toList();
+
+        OrderCreatedEvent event = getOrderCreatedEvent(persistedOrder, dtoList);
+
+        orderProducer.sendOrderCreateEvent(event);
 
         return new CreateOrderResult(toCreateOrderResponse(persistedOrder), false);
+    }
+
+    private static OrderCreatedEvent getOrderCreatedEvent(Order persistedOrder, List<OrderItemDto> dtoList) {
+        return new OrderCreatedEvent(
+                persistedOrder.getId(),
+                persistedOrder.getUserId(),
+                persistedOrder.getTotalAmount(),
+                dtoList
+        );
     }
 
     @Transactional(readOnly = true)
@@ -226,6 +244,16 @@ public class OrderService {
                 product.getPrice(),
                 requestItem.getQuantity()
         );
+    }
+
+    public void paymentProcessed(PaymentProcessedEvent event) {
+        var order = orderRepository.findById(event.orderId()).orElseThrow(
+                () -> new RuntimeException("Order id " + event.orderId() + " not found")
+        );
+
+        order.setStatus(Status.COMPLETED);
+        var persistedOrder = orderRepository.save(order);
+        log.info("Order status was set to " + persistedOrder.getStatus());
     }
 
     private record ResolvedOrderItem(Long productId, String productName, BigDecimal productPrice, Integer quantity) {}
