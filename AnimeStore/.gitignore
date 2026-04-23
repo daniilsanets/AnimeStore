@@ -5,6 +5,10 @@ build/
 !**/src/test/**/build/
 
 ### IntelliJ IDEA ###
+.idea/workspace.xml
+.idea/shelf/
+.idea/amplicode-*.xml
+amplicode.xml
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
