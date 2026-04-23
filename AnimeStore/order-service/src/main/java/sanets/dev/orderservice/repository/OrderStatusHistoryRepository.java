@@ -2,7 +2,7 @@ package sanets.dev.orderservice.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import sanets.dev.orderservice.entity.OrderStatusHistory;
+import sanets.dev.orderservice.model.OrderStatusHistory;
 
 @Repository
 public interface OrderStatusHistoryRepository extends JpaRepository<OrderStatusHistory,Long> {

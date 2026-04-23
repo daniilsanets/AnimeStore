@@ -20,7 +20,7 @@ import sanets.dev.orderservice.dto.OrderStatusUpdateRequestDTO;
 import sanets.dev.orderservice.service.OrderService;
 
 @RestController
-@RequestMapping("/api/orders")
+@RequestMapping("/api/v1/orders")
 @RequiredArgsConstructor
 public class OrderController {
 

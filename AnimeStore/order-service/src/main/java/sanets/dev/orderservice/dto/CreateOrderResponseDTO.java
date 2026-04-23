@@ -2,7 +2,7 @@ package sanets.dev.orderservice.dto;
 
 import lombok.Builder;
 import lombok.Data;
-import sanets.dev.orderservice.entity.Status;
+import sanets.dev.orderservice.model.Status;
 
 import java.math.BigDecimal;
 

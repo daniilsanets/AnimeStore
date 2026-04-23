@@ -17,7 +17,6 @@ public class InventoryProducer {
         System.out.println("Items was reserved successfully");
     }
 
-    //for now this useless method
     public void sendInventoryFailedEvent(InventoryFailedEvent event){
         kafkaTemplate.send("inventory-failed-events-topic", String.valueOf(event.orderId()), event);
         System.out.println("Items cannot be reserved because of: " + event.reason());

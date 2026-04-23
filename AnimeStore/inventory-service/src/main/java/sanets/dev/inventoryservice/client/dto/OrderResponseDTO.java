@@ -1,4 +1,4 @@
-package sanets.dev.orderservice.dto;
+package sanets.dev.inventoryservice.client.dto;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package sanets.dev.orderservice.entity;
+package sanets.dev.orderservice.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

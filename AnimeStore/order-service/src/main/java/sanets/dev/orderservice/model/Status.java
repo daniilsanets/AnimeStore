@@ -1,4 +1,4 @@
-package sanets.dev.orderservice.entity;
+package sanets.dev.orderservice.model;
 
 public enum Status {
     NEW,

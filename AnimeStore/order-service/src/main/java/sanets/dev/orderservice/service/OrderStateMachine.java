@@ -1,7 +1,7 @@
 package sanets.dev.orderservice.service;
 
 import org.springframework.stereotype.Component;
-import sanets.dev.orderservice.entity.Status;
+import sanets.dev.orderservice.model.Status;
 
 import java.util.EnumMap;
 import java.util.EnumSet;

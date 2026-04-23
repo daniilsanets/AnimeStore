@@ -3,7 +3,7 @@ package sanets.dev.orderservice.dto;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
-import sanets.dev.orderservice.entity.Status;
+import sanets.dev.orderservice.model.Status;
 
 @Data
 public class OrderStatusUpdateRequestDTO {
