@@ -1,4 +1,4 @@
-package sanets.dev.paymentservice.model;
+package sanets.dev.inventoryservice.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,30 +12,26 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
-
+@Table(name = "inventory_reservation")
 @Entity
-@Table
-@NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
+@NoArgsConstructor
 @Builder
-public class Payment {
-
+@Setter
+@Getter
+public class InventoryReservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_id", nullable = false)
-    private Long userId;
-
-    @Column(name = "order_id")
+    @Column(name = "order_id", nullable = false)
     private Long orderId;
 
-    @Column(name = "total_amount", nullable = false)
-    private BigDecimal totalAmount;
+    @Column(name = "product_id", nullable = false)
+    private Long productId;
 
-    @Column(name = "currency")
-    private String currency = "USD";
+    //check on >0
+    @Column(nullable = false)
+    private Integer quantity;
+
 }

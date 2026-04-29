@@ -3,51 +3,63 @@ package sanets.dev.inventoryservice.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import sanets.dev.inventoryservice.client.dto.OrderItemResponseDTO;
 import sanets.dev.inventoryservice.kafka.event.orderservice.OrderItemDto;
+import sanets.dev.inventoryservice.model.InventoryReservation;
 import sanets.dev.inventoryservice.repository.InventoryRepository;
 import sanets.dev.inventoryservice.model.Inventory;
+import sanets.dev.inventoryservice.repository.InventoryReservationRepository;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
 public class InventoryService {
 
     private final InventoryRepository inventoryRepository;
+    private final InventoryReservationRepository inventoryReservationRepository;
 
     @Transactional
-    public void reserveItems(List<OrderItemDto> items) {
+    public void reserveItems(Long orderId, List<OrderItemDto> items) {
+
+        List<InventoryReservation> reservations = new ArrayList<>();
 
         for (OrderItemDto item : items) {
-
-            Inventory inventory = inventoryRepository.findByProductId(item.productId())
-                    .orElseThrow(() -> new RuntimeException("Item with ID " + item.productId() + " did not found in storage"));
-
-            if (inventory.getAvailableQuantity() < item.quantity()) {
-                throw new RuntimeException("Does not have enough quantity " + item.productId());
+            int updatedRows = inventoryRepository.attemptReservation(item.productId(), item.quantity());
+            if (updatedRows == 0) {
+                throw new IllegalArgumentException("Could not reserve item " + item.productId() +
+                        " (not found or not enough quantity)");
             }
 
-            inventory.setAvailableQuantity(inventory.getAvailableQuantity() - item.quantity());
-            inventory.setReservedQuantity(inventory.getReservedQuantity() + item.quantity());
-
-            inventoryRepository.save(inventory);
+            reservations.add(toInventoryReservation(orderId, item));
         }
+
+        inventoryReservationRepository.saveAll(reservations);
     }
 
-    public void cancelReservedItems(Set<OrderItemResponseDTO> items) {
-        items.forEach(item -> {
-            var inventory = inventoryRepository.findByProductId(item.getProductId())
-                    .orElseThrow(() -> new RuntimeException("Item with ID " + item.getProductId() + " did not found in storage"));
+    @Transactional
+    public void cancelReservation(Long orderId) {
+        inventoryReservationRepository.getInventoryReservationsByOrderId(orderId)
+                .ifPresent(inventoryReservation ->
+                        {
+                            Inventory inventory = inventoryRepository.findByProductId(inventoryReservation.getProductId())
+                            .orElseThrow(() -> new RuntimeException("Item with ID " + inventoryReservation.getProductId() + " not found in storage"));
 
-            //give back non-touched items to inventory
-            inventory.setReservedQuantity(inventory.getReservedQuantity() - item.getQuantity());
-            inventory.setAvailableQuantity(inventory.getAvailableQuantity() + item.getQuantity());
+                            inventory.setAvailableQuantity(inventory.getAvailableQuantity() + inventoryReservation.getQuantity());
+                            inventory.setReservedQuantity(inventory.getReservedQuantity() - inventoryReservation.getQuantity());
 
-            inventoryRepository.save(inventory);
-        });
+                            inventoryRepository.save(inventory);
+                            inventoryReservationRepository.delete(inventoryReservation);
+                        });
+    }
 
+    //mapper responsibility
+    private InventoryReservation toInventoryReservation(Long orderId, OrderItemDto item) {
+        return InventoryReservation.builder()
+                .orderId(orderId)
+                .productId(item.productId())
+                .quantity(item.quantity())
+                .build();
     }
 
 }

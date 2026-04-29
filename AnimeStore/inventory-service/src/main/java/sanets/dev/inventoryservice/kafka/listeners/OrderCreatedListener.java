@@ -1,6 +1,7 @@
 package sanets.dev.inventoryservice.kafka.listeners;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +13,7 @@ import sanets.dev.inventoryservice.kafka.producer.InventoryProducer;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class OrderCreatedListener {
 
     private final InventoryService inventoryService;
@@ -19,10 +21,10 @@ public class OrderCreatedListener {
 
     @KafkaListener(topics = "order-created-events-topic", groupId = "inventory-group")
     public void handleOrderCreated(OrderCreatedEvent event) {
-        System.out.println("Inventory got order id: " + event.orderId());
+        log.info("Inventory got order id: {}", event.orderId());
 
         try {
-            inventoryService.reserveItems(event.orderItemList());
+            inventoryService.reserveItems(event.orderId(), event.orderItemList());
 
             InventoryReservedEvent successEvent = new InventoryReservedEvent(
                     event.orderId(),
@@ -32,7 +34,7 @@ public class OrderCreatedListener {
             inventoryProducer.sendInventoryReservedEvent(successEvent);
 
         } catch (RuntimeException e) {
-            System.err.println("Reservation failed: " + e.getMessage());
+            log.error("Reservation failed: {}", e.getMessage());
 
             InventoryFailedEvent failedEvent = new InventoryFailedEvent(
                     event.orderId(),

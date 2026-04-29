@@ -24,6 +24,7 @@ public class OrderStateMachine {
     }
 
     public boolean canTransition(Status from, Status to) {
-        return allowedTransitions.getOrDefault(from, EnumSet.noneOf(Status.class)).contains(to);
+        return allowedTransitions.getOrDefault(from, EnumSet.noneOf(Status.class))
+                .contains(to);
     }
 }
